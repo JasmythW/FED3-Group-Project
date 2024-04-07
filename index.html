@@ -1,48 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <source href="style.css" rel="stylesheet">
-    <title>Node.js</title>
-</head>
-<body>
-    <h1>Node.js</h1>
-    <h2>What is your Component?</h2>
-    <p></p>
-    <h4>Asynchronous</h4>
-    <h4>V8 Javascript Engine</h4>
-    <h4>Runtime Environment</h4>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <source href="style.css" rel="stylesheet">
+        <title>Node.js</title>
+    </head>
+    <body>
+        <img src="img/Nodejs-Logo.png" alt="Nodejs Logo">
+        <h1>Node.js</h1>
 
-    <h2>What is its purpose?</h2>
-    <h4>Good for</h4>
-    <h4>Bad for</h4>
-
-    <h2>Why is it important?</h2>
-    <h4>Javascript Based</h4>
-    <h4>Fast</h4>
-    <h4>Scalable</h4>
-
-    <h2>How does it integrate into the MERN Stack?</h2>
-    <h3>What are the steps to integrate it?</h3>
-    <h3>What are its dependencies?</h3>
-    <h3>Are there any considerations for this configuration? What are the most common and how are they done?</h3>
-
-    <h2>Common Functionality</h2>
-    <h4>Node Modules</h4>
-    <h4>NPM</h4>
-
-    <h2>Setting Up a Node.js environment</h2>
-
-    <h2>Building a REST API with Express.js</h2>
-
-    <h2>Asynchronous programming in Node.js</h2>
-
-    <h2>Connection Node.js with MongoDB</h2>
-
-    <h2>Best practices and security considerations</h2>
-
-    <h2>Resources</h2>
+        <!-- These IDs are for side nav links -->
+        <div id="definition">
+            <h2>What is Node.js?</h2>
+                <p>Node.js is an asynchronous, cross-platform Javascript based runtime environment
+                    for server and network-side applications. It is built on the V8 Javascript Engine,
+                    or what powers Google Chrome, which is why Node.js is Javascript based.
+                </p>
+                <p>Also, Nodejs is a runtime environment that allows you to run JavaScript, outside the web
+                 browser, on a server.
+                </p>
+            <h4>Asynchronous</h4>
+                <p>Executing tasks asynchronously means that you don’t have to wait for a task to finish
+                     before moving on to a different task. 
+                </p>
+                <p>The alternative is executing tasks synchronously and having to wait for one task to 
+                    complete before moving on (ie. submitting a form in a web page and the UI blocks any
+                     other tasks until the form has submitted).
+                </p>
+            <h4>V8 Javascript Engine</h4>
+                <p>This is the engine that takes our JavaScript and executes it while browsing with Chrome.
+                     It is independent of the browser in which the engine is being hosted.
+                </p>
+            <h4>Runtime Environment</h4>
+                <p>A runtime environment is where the application code is ran. These also typically include
+                     common libraries but do not include the capability to edit the code (this is done in a
+                      development environment or code editor).
+                </p>
+        </div> 
     
-</body>
+        <div id="purpose">
+            <h2>What is its purpose?</h2>
+                <p>Node.js is designed to build fast and scalable network applications by employing push technology
+                    over <b>WebSocket</b>.
+                </p>
+                <p><b>WebSocket</b> is a computer communications protocol, providing simultaneous two-way communication
+                     channels over a single Transmission Control Protocol (standard that enables apps and devices
+                      to exchange messages over a network) connection.
+                </p>
+                <p><b>In short:</b>Node.js allows web applications to have real-time, two way connections between client
+                     and server. This allows them to initiate communication and exchange data more efficiently.</p>
+            <h4>Good for</h4>
+                    <p>Low processing applications such as a chat or a system monitoring dashboard.</p>
+            <h4>Bad for</h4>
+                    <p>Applications with CPU intensive processes like processing graphics, mathematical calculations, and video
+                         or image compression.
+                    </p>
+        </div>
+    
+        <div id="important">
+            <h2>Why is it important?</h2>
+            <h4>Javascript Based</h4>
+                <p>Because Node.js runs on the Javascript based V8 Engine, your interactive front end components and Node.js back end
+                     components are written in the same language. This helps save time by avoiding converting functions or objects
+                      into different languages.
+                </p>
+            <h4>Fast</h4>
+                <p>Node.js is fast and lightweight because it works on tasks in a non-blocking,  asynchronous system. This means
+                     that tasks can run at different times and more demanding tasks will not stop (or block) other functions. This
+                      is helpful when completing longer wait time tasks (i.e. network accessing and file system accessing) because
+                       Node.js will allow these tasks to run in the background and other tasks continue running.
+                </p>
+            <h4>Scalable</h4>
+                <p>Node.js is highly scalable and is able to handle a growing amount of activity. It can handle many simultaneous
+                     requests thanks to it&apos;s non-blocking I/O (input/output) system and it&apos;s single threaded <b>event loop</b>.
+                </p>
+                <p>The <b>event loop</b>is a continuous process that waits for and dispatches events/messages in a program. It keeps Node.js running,
+                     responding to requests, and handling I/O operations without getting blocked.
+                </p>
+        </div>
+    
+        <h2>How does it integrate into the MERN Stack?</h2>
+        <h3>What are the steps to integrate it?</h3>
+        <h3>What are its dependencies?</h3>
+        <h3>Are there any considerations for this configuration? What are the most common and how are they done?</h3>
+    
+        <h2>Common Functionality</h2>
+        <h4>Node Modules</h4>
+        <h4>NPM</h4>
+        <h4>MongoDB</h4>
+
+        <h2>Asynchronous programming in Node.js</h2>
+    
+        <h2>Setting Up a Node.js environment</h2>
+    
+        <h2>Building a REST API with Express.js</h2>
+    
+        <h2>Best practices and security considerations</h2>
+    
+        <h2>Resources</h2>
+    
+    </body>
 </html>
