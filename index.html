@@ -94,7 +94,179 @@
     
         <h2>Setting Up a Node.js environment</h2>
     
-        <h2>Building a REST API with Express.js</h2>
+        <div id="RESTAPI">
+            <h2>Building a REST API with Express.js</h2>
+
+            <h3>What is a REST API?</h3>
+                <p>A REST API is a standard program communication interface which implements the REST (Representational State Transfer) architecture
+                    style. 
+                </p>
+                <p>This architecture consists of unique URLs assigned to a resource or endpoint which holds data. Users can access the 
+                    resource/endpoint data by making a HTTP request and using the required URL format and appropriate HTTP method:
+                </p>
+                <p>http://domain-name.com/HTTP-method/resource-name</p>
+
+
+                <h3>A Review on HTTP Methods</h3>
+                    <img src="img/HTTP-Request-Methods.png" alt="HTTP Request Methods">
+                    <p>These HTTP requests utilize CRUD operations (Create, Read, Update, Delete).</p>
+                    <p>After the HTTP request is sent, the server will process it and send back a response with a status code and
+                         (hopefully) the requested data.
+                    </p>
+                    <p>Server Status Codes</p>
+                    <ul>
+                        <li>2** - GOOD</li>
+                        <li>4** - Something is wrong with the request</li>
+                        <li>5** - Something is wrong with the server/server response</li>
+                    </ul>
+
+
+            <h3>What is Express.js?</h3>
+                <p>When creating an api with multiple HTTP requests/responses, the code can get pretty complicated. A framework,
+                        like Express.js, helps to give the application a structure and easily add more paths.
+                </p>
+
+
+                <h4>Installing Express.js</h4>
+                <p>Express.js is a packae found on npm and can be installed in your project through the terminal.</p>
+                <p>In the terminal, ensure you are in the appropriate directory for your project (or create a new project) and then
+                     use the following command to install the Express.js module.
+                </p>
+                <p><code>npm i express</code></p>
+
+                <p>Move to VS Code and use the require() function to use Express.js.</p>
+                <p><code>const express= require('express');</code></p>
+
+                <p>Call the express function and store the result in an object called &apos;app&apos;</p>
+                <p>This is a standard set up for an express app and represents the entire application. From here, you can perform various
+                    methods on the app object.
+                </p>
+
+                <p>This application is set up and ready to use!</p>
+                <img src="img/install-expresjs.png" alt="Express.js Complete Set Up">
+
+            <h3>Building the REST API</h3>
+
+                <p>REST APIs utilizes the HTTP requests as methods on the app object to complete basic CRUD operations.</p>
+                <p>This includes:</p>
+                <ul>
+                    <li>Read: app.get()</li>
+                    <li>Create: app.post()</li>
+                    <li>Update: app.put()</li>
+                    <li>Delete: app.delete()</li>
+                </ul>
+
+            <h4>Read: app.get()</h4>
+                <p>This is a simple get path for the root (&apos;/&apos;).</p>
+                <img src="img/get_path1.png" alt="A Simple get() Path">
+
+                <p>The <code>get()</code> method accepts the URL path as the first parameter and then a callback function as a second parameter. The
+                     callback function accepts the HTTP request and response as parameters.
+                </p>
+                <p>When the client requests the root resource (&apos;/&apos;), the callback function will execute and provide
+                     the appropriate response.
+                </p>
+                <p>The <code>res.send()</code> method will define what will be sent in the response back to the client.</p>
+
+                <br>
+
+                <p>After setting up the first resource path, you will need to set a port for the app object to listen to for incoming HTTP
+                     requests.
+                </p>
+                <p>The <code>app.listen()</code> method will accept the assigned port (3000) to respond to.</p>
+                <p>You can optionally set a function as the second parameter to give a ready message. This is helpful to let the user know
+                     the API is working.
+                </p>
+                <p>Example:</p>
+                <img src="img/get_port.png" alt="An Example of Port Listening and Ready Message">
+                
+                <br>
+
+                <p>To run the app, use the following command in the terminal: </p>
+                <p><code>node index.js</code></p>
+                <p>The console log from the <code>app.listen()</code> will appear in the terminal when the API is active.</p>
+                <img src="img/node_indexjs.png" alt="A Terminal Showing the Ready Message of an API">
+                <p>Enter <b>localhost:3000</b> in your browser.</p>
+                <p>You will see your response message appear.</p>
+                <img src="img/hello_world_api.png" alt="A Hello World Message">
+
+                <p>Once the first resource path is set up, you can add more resource paths as needed. The resource path below responds with
+                     a simple array.
+                </p>
+                <img src="img/get_path2.png" alt="Two Simple get() Paths">
+
+                <br>
+
+                <p>NOTE: The port number used in this example is an arbitrary number. In a real case, you would utilize a port number set
+                     as an external environment variable.
+                </p>
+                <img src="img/proper_port_setup.png" alt="An Example of a Proper Port Listener Set Up">
+                <p>This lets the program know to try to find a port number from the environment variables and, if one is not found, use the
+                     arbitrary port 3000.
+                </p>
+
+                <br>
+
+                <p>TIP: After each change to the code, Node.js will need to be restarted to see changes in the browser. A helpful
+                     module called Nodemon can be installed to automatically restart Node.js with each change. 
+                </p>
+
+            <br>
+
+            <h4>Create: app.post()</h4>
+                <p>An array called <code>items</code> was created for this example. Creating, updating, and deleting example opterations will
+                     use this array. This code is assuming that the name will come from the body of the post request in a key:value pair.
+                </p>
+                
+                <br>
+                
+                <p>IMPORTANT: Express.js will not automatically parse new JSON data. You will need to add middleware at the beginning
+                     of the code so the JSON data coming with new HTTP requests will be properly parsed.
+                </p>
+                <img src="img/middleware.png" alt="An Example of Middleware for JSON Data Parsing">
+
+                <br>
+
+                <p>The <code>post()</code> resource path is set up with the same URL path and response/request callback layout.</p>
+                <p>However, in the call back function code block, you will need to prepare for new data from the client. You should create
+                     a new item and create the format for the incoming data. In this case, we will assign an id and retrieve the name from
+                      the client.
+                </p>
+                <img src="img/post_setup.png" alt="A post() Resouce Path Set Up">
+
+                <p>To update our array with the new item, you will need to push the new item to the array.</p>
+                <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+                <img src="img/post_completed.png" alt="A Completed post() Resource Path">
+                
+            <br>
+
+            <h4>Update: app.put()</h4>
+                <p>Before you can update a particular item, you first need to look for it in our array. You can find the specific item by adding
+                     <code>:id</code> in the route path parameter.
+                </p>
+                <p>It is best practice to validate if the ID exists before the code block fully executes. If the ID doesn&apos;t exist, you can stop the
+                     function using a <code>return</code> and provide a 404 error back to the client. 
+                </p>
+                <img src="img/put_find_item.png" alt="A put() Resource Path Set Up">
+
+                <p>In this example, we are updating the item&apos;s name from the data entered into the HTTP request body.</p>
+                <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+                <img src="img/put_completed.png" alt="A Completed put() Resource Path">
+
+            <br>
+
+            <h4>Delete: app.delete()</h4>
+                <p>The <code>delete()</code> method begins the same as the <code>put()</code> method: by finding the specific item by adding <code>:id</code> in the route
+                     path parameter and including instructions for a 404 error if the ID doesn&apos;t exist.
+                </p>
+                <img src="img/delete_find_item.png" alt="A delete() Resource Path Set Up">
+
+                <p>To delete the item, you should first find the index of the item from the array using the built in <code>indexOf()</code> method and assign value to a variable.
+                     Next, you can use the <code>splice()</code> method to remove this item by giving it the index value of the item and removing 1 object.
+                </p>
+                <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+                <img src="img/delete_completed.png" alt="A Completed delete() Resource Path">
+        </div>
     
         <h2>Best practices and security considerations</h2>
     
