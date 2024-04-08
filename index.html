@@ -115,11 +115,93 @@
             </h3>
         </div>
 
-        <div class="section" id="commonFunctionality">
+        <div class="section" id="commonFunctionality"></div>
             <h2>Common Functionality</h2>
-            <h4>Node Modules</h4>
-            <h4>NPM</h4>
-            <h4>MongoDB</h4>
+                <p>Node.js creates a runtime environment/ local host for your program. Additionally, through the help of modules, common tasks like creating
+                    HTTP servers and requests, accessing and manipulating the file system, and handling events are made simple.
+                </p>
+            <h3>Node Modules</h3>
+                <p><b>Node Modules</b> are blocks of code that include functions to use within your code. There are multiple source options for modules:</p>
+                <ul>
+                    <li><b>Included with Node.js-</b> core modules included with Node.js download.</li>
+                    <li><b>NPM-</b> modules can be downloaded from NPM</li>
+                    <li><b>Create Your Own-</b> create your own module by creating a file for it, building the functions, then using the <code>require()</code>
+                         function to use it in a different file.</li>
+                </ul>
+                <p>Modules are very important because they are reusable and they help break down complex pieces of code into manageable chunks.
+                </p>
+
+                <h4>Core Modules</h4>
+                <p>Nodes.js&apos;s Core Modules are modules included in the Node.js installation. These modules can be loaded into your program by using the <code>required()</code> function.</p>
+                <p><code>const module = require('module_name);</code></p>
+
+                <p>Some of the most commonly used core modules: </p>
+                <table>
+                    <tr>
+                        <th>Core Modules</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>http</td>
+                        <td>Creates an HTTP server in Node.js</td>
+                    </tr>
+                    <tr>
+                        <td>events</td>
+                        <td>Handling events</td>
+                    </tr>
+                    <tr>
+                        <td>assert</td>
+                        <td>Provides a set of assertion tests</td>
+                    </tr>
+                    <tr>
+                        <td>fs</td>
+                        <td>Used to handle file system</td>
+                    </tr>
+                    <tr>
+                        <td>path</td>
+                        <td>Includes methods to deal with file paths</td>
+                    </tr>
+                    <tr>
+                        <td>os</td>
+                        <td>Provides information about the operating system</td>
+                    </tr>
+                    <tr>
+                        <td>querystring</td>
+                        <td>Utility used for parsing and formatting URL query strings</td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td>Module provides utilities for URL resolution and parsing</td>
+                    </tr>
+                    <tr>
+                        <td>Find full list of core modules:</td>
+                        <td><a href="https://www.w3schools.com/nodejs/ref_modules.asp">Here</a></td>
+                    </tr>
+                </table>
+
+                <h4>Creating an HTML Server:</h4>
+                    <p>A very common function of using Node.js is creating an HTTP server using the HTTP module. Here is what a simple HTTP server would
+                         look like using this module:
+                    </p>
+                    <img src="img/http_server_ex.png" alt="An HTTP Server Made Using HTTP Module">
+
+            <h3>NPM</h3>
+                <p>NPM (aka Node Package Manager) is the largest software registry which manages packages (or modules). It hosts thousands of packages
+                     which can be downloaded and applied to your projects.
+                </p>
+                <p>NPM is installed with the Node.js download. When you are ready to use modules or prepare the package.json file for your project,
+                     you will need to use the following command in the terminal:
+                </p>
+                <p><code>npm init</code></p>
+
+                <p>You can browse NPM&apos;s website (<a href="https://www.npmjs.com/">https://www.npmjs.com/</a>) to find different packages. However,
+                     to use the packages in your code, you will need to use a unique install command through the command line interface/terminal.
+                </p>
+                <p>For example: <code>node i express</code> installs the Express.js package in your project.</p>
+
+                <p>Finally, to use a NPM package in your project, you will need to load the package into the program with the required function:</p>
+                <p><code>const pn = require('package-name');</code></p>
+
         </div>
 
         <div class="section" id="async">
