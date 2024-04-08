@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Node.js</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/Nodejs_Logo.png" alt="Nodejs Logo">
+        <h1>Node.js</h1>
+    </div>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="#definition">What is Node.js</a></li>
+            <li><a href="#purpose">The Purpose of Node.js</a></li>
+            <li><a href="#important">The Importance of Node.js</a></li>
+            <li><a href="#mern">MERN Integration</a></li>
+            <li><a href="#commonFunctionality">Common Functionality</a></li>
+            <li><a href="#async">Asynchronous Programming</a></li>
+            <li><a href="#setup">Setting up Node.js</a></li>
+            <li><a href="#RESTAPI">Rest API</a></li>
+            <li><a href="#bestPractices">Node.js Best Practices</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="section" id="definition">
+            <h2>What is Node.js?</h2>
+            <p>Node.js is an asynchronous, cross-platform Javascript based runtime environment
+                for server and network-side applications. It is built on the V8 Javascript Engine,
+                or what powers Google Chrome, which is why Node.js is Javascript based.
+            </p>
+            <p>Also, Nodejs is a runtime environment that allows you to run JavaScript, outside the web
+                browser, on a server.
+            </p>
+            <h4>Asynchronous</h4>
+            <p>Executing tasks asynchronously means that you don’t have to wait for a task to finish
+                before moving on to a different task.
+            </p>
+            <p>The alternative is executing tasks synchronously and having to wait for one task to
+                complete before moving on (ie. submitting a form in a web page and the UI blocks any
+                other tasks until the form has submitted).
+            </p>
+            <h4>V8 Javascript Engine</h4>
+            <p>This is the engine that takes our JavaScript and executes it while browsing with Chrome.
+                It is independent of the browser in which the engine is being hosted.
+            </p>
+            <h4>Runtime Environment</h4>
+            <p>A runtime environment is where the application code is ran. These also typically include
+                common libraries but do not include the capability to edit the code (this is done in a
+                development environment or code editor).
+            </p>
+        </div>
+
+        <div class="section" id="purpose">
+            <h2>What is its purpose?</h2>
+            <p>Node.js is designed to build fast and scalable network applications by employing push technology
+                over <b>WebSocket</b>.
+            </p>
+            <p><b>WebSocket</b> is a computer communications protocol, providing simultaneous two-way communication
+                channels over a single Transmission Control Protocol (standard that enables apps and devices
+                to exchange messages over a network) connection.
+            </p>
+            <p><b>In short:</b>Node.js allows web applications to have real-time, two way connections between client
+                and server. This allows them to initiate communication and exchange data more efficiently.</p>
+            <h4>Good for</h4>
+            <p>Low processing applications such as a chat or a system monitoring dashboard.</p>
+            <h4>Bad for</h4>
+            <p>Applications with CPU intensive processes like processing graphics, mathematical calculations, and video
+                or image compression.
+            </p>
+        </div>
+
+        <div class="section" id="important">
+            <h2>Why is it important?</h2>
+            <h4>Javascript Based</h4>
+            <p>Because Node.js runs on the Javascript based V8 Engine, your interactive front end components and Node.js
+                back end
+                components are written in the same language. This helps save time by avoiding converting functions or
+                objects
+                into different languages.
+            </p>
+            <h4>Fast</h4>
+            <p>Node.js is fast and lightweight because it works on tasks in a non-blocking, asynchronous system. This
+                means
+                that tasks can run at different times and more demanding tasks will not stop (or block) other functions.
+                This
+                is helpful when completing longer wait time tasks (i.e. network accessing and file system accessing)
+                because
+                Node.js will allow these tasks to run in the background and other tasks continue running.
+            </p>
+            <h4>Scalable</h4>
+            <p>Node.js is highly scalable and is able to handle a growing amount of activity. It can handle many
+                simultaneous
+                requests thanks to it&apos;s non-blocking I/O (input/output) system and it&apos;s single threaded
+                <b>event loop</b>.
+            </p>
+            <p>The <b>event loop</b>is a continuous process that waits for and dispatches events/messages in a program.
+                It keeps Node.js running,
+                responding to requests, and handling I/O operations without getting blocked.
+            </p>
+        </div>
+
+        <div class="section" id="mern">
+            <h2>How does it integrate into the MERN Stack?</h2>
+                <p>MERN Stack enables fast and event-driven back-end development, facilitating seamless communication between the 
+                    front-end and back-end components.</p>
+            <h3>What are the steps to integrate it?</h3>
+                <h4>Step 1</h4>
+                    <p>Install <a href="https://nodejs.org/en">Node</a></p>
+                <h4>Step 2</h4>
+                    <p>Create a New Node Project</p>
+                <h4>Step 3</h4>
+                    <p>Create a Node.js Express Server</p>
+            
+            <h3>What are its dependencies?</h3>
+                <p>If you want to store data from your app in a database, you can connect it to MongoDB in the same way that you connect a module.
+                MongoDB is an open source NoSQL database management program. It stores data in JSON-like documents.</p>
+                <p>To connect MongoDB to Node.js you will first need to install the MongoDB Driver.
+                To download and install the mongodb package from NPM, run the following command in the terminal:</p>
+                <code>npm install mongodb</code>
+                <p>To connect it to your Node.js type this into your code editor.</p>
+                <code>const mongo = require('mongodb');</code>            
+            <h3>Are there any considerations for this configuration? What are the most common and how are they done?
+                <h4>Production Dependencies</h4>
+                <p>This is what is required for your application to run</p>
+                <h4>Development Dependencies</h4>
+                    <p>This is only needed during development (e.g., testing frameworks, build tools).</p>
+                <br>
+                <p>To keep your dependencies organized, list them separately in your package.json file using the "dependencies" and "devDependencies" keys:</p>
+                <code>{</code><br>
+                    <code>"dependencies": {</code><br>
+                      <code>"express": "^4.17.1"</code><br>
+                    <code>},</code><br>
+                    <code>"devDependencies": {</code><br>
+                      <code>"mocha": "^9.1.3"</code><br>
+                    <code>}</code><br>
+                    <code>}</code><br>
+            </h3>
+        </div>
+
+        <div class="section" id="commonFunctionality">
+            <h2>Common Functionality</h2>
+            <h4>Node Modules</h4>
+            <h4>NPM</h4>
+            <h4>MongoDB</h4>
+        </div>
+
+        <div class="section" id="async">
+            <h2>Asynchronous programming in Node.js</h2>
+            <p>Programming asynchronously means that you don’t have to wait for a task to finish before moving on to a
+                different task. Intensive tasks will run in the background without blocking other parts of the code.</p>
+            <p><b>Callbacks</b> help us make asynchronous calls.</p>
+            <p><b>Callbacks</b> are a function which is passed as an argument in another function.</p>
+            <p>Callback functions are called when the function that contains the callback as an argument completes its execution, and allows the code in the callback to run in the meantime.</p>
+            <p>For example, we can define a callback to print the error and result after the function execution</p>
+            <ul><p><code>function function_name(argument, <b>function (error, result){ <br>
+                &emsp;if(error){ <br>
+                    &emsp;&emsp;console.log(error) <br>
+                    &emsp;} else {<br>&emsp;&emsp;console.log(result) <br>
+                        &emsp;} <br>
+                    }</b>) // bold = callback function</code></p></ul>
+            <p>or with an arrow function:</p>
+            <ul><p><code>function function_name(argument, (callback_argument) => { <br> 
+                &emsp;// callback body <br> 
+            })
+            </code></p></ul>
+            <p>For a function that reads text froma file and displays the data in the console log</p>
+            <p>An example without callbacks:</p>
+            <ul>
+            <p><code>const fs = require('fs');<br>
+                const data = fs.readFileSync('hello.txt', 'utf-8');<br>console.log(data);</code></p>
+            <p>For any code after the <code>readFileSync</code> method, would need to wait for it to finish processing, blocking any other functions.</p></ul>
+            <p>An example with callbacks:</p>
+            <ul>
+            <p><code>const fs = require('fs');<br>
+                const data = fs.readFile('hello.txt', 'utf-8', function(err, result){ <br> 
+                    &emsp;if(err){ <br>
+                        &emsp;&emsp;console.log(err) <br>
+                        &emsp;} else { <br>
+                            &emsp;&emsp;console.log(result) <br>
+                            &emsp;} <br>
+                });</code></p>
+            <p>This example includes a callback function.</p>
+            <p>When the <code>readFile</code> method is done the callback is triggered and prints the results.</p>
+            </ul>
+        </div>
+
+        <div class="section" id="setup">
+            <h2>Setting Up a Node.js environment</h2>
+
+            <h3>Step 1: Download and install Node.js</h3>
+                <p>You can download Node.js from <a href="https://nodejs.org" >https//nodejs.org</a>. NPM will also be installed along side Node.js</p>
+
+            <h3>Step 2: Open Terminal and Create a Directory</h3>
+                <p>In the terminal, use the following command to make a new file directory:</p>
+                <code>mkdir [directory name]</code>
+
+                <p>Then use this command to move into (or change to) the new directory:</p>
+                <code>cd [directory name]</code>
+
+                <img src="img/node_setup1.png" alt="In a Terminal Making a New Directory and Changing to It">
+
+            <h3>Step 3: Set Up a package.json File</h3>
+                <p>This package.json file will hold important information including dependencies for the project, author information, etc. In the terminal,
+                     use the following command:
+                </p>
+                <code>npm init -y</code>
+                <p><code>-y</code> accepts the default settings for setting up the file. You can edit this file at any time so you can use the <code>-y</code>
+                     to have a quicker set up.
+                </p>
+
+                <img src="img/node_setup2.png" alt="In a Terminal Setting Up a Package.JSON File">
+
+            <h3>Step 4: Begin Coding in VS Code</h3>
+                <p>Begin writing code in the VS Code code editor. Open the new folder in VS Code or in the terminal, type in command <code>code .</code>. This
+                     command will open VS Code and the . refers to the current file in the directory.
+                </p>
+
+                <p>You will see the previously set up package.json file in the file directory.</p>
+                <img src="img/node_setup3.png" alt="A Properly Set Up Node Project Directory and Package.JSON File">
+
+            <h3>Step 5: Create a index.js File</h3>
+                <p>The index.js file is the default main file for this project. You can create this file in the directory in VS Code by selecting the “New File”
+                     button.
+                </p>
+
+                <p><b>Important:</b> The package.json file will expect a “main” file which by default is named “index.js”. If you decide to name your main file
+                     something different, make sure to change the name in the package.json file.
+                </p>
+
+                <img src="img/node_setup4.png" alt="A New Index.js File in a Project Directory">
+
+            <h3>Step 6: Your Node.js Project is Set Up!</h3>
+                <p>You can now start coding or working with packages.</p>
+
+        </div>
+
+        <div class="section" id="RESTAPI">
+            <h2>Building a REST API with Express.js</h2>
+
+            <h3>What is a REST API?</h3>
+            <p>A REST API is a standard program communication interface which implements the REST (Representational
+                State Transfer) architecture
+                style.
+            </p>
+            <p>This architecture consists of unique URLs assigned to a resource or endpoint which holds data. Users can
+                access the
+                resource/endpoint data by making a HTTP request and using the required URL format and appropriate HTTP
+                method:
+            </p>
+            <p>http://domain-name.com/HTTP-method/resource-name</p>
+
+
+            <h3>A Review on HTTP Methods</h3>
+            <img src="img/HTTP-Request-Methods.png" alt="HTTP Request Methods">
+            <p>These HTTP requests utilize CRUD operations (Create, Read, Update, Delete).</p>
+            <p>After the HTTP request is sent, the server will process it and send back a response with a status code
+                and
+                (hopefully) the requested data.
+            </p>
+            <p>Server Status Codes</p>
+            <ul>
+                <li>2** - GOOD</li>
+                <li>4** - Something is wrong with the request</li>
+                <li>5** - Something is wrong with the server/server response</li>
+            </ul>
+
+
+            <h3>What is Express.js?</h3>
+            <p>When creating an api with multiple HTTP requests/responses, the code can get pretty complicated. A
+                framework,
+                like Express.js, helps to give the application a structure and easily add more paths.
+            </p>
+
+
+            <h4>Installing Express.js</h4>
+            <p>Express.js is a packae found on npm and can be installed in your project through the terminal.</p>
+            <p>In the terminal, ensure you are in the appropriate directory for your project (or create a new project)
+                and then
+                use the following command to install the Express.js module.
+            </p>
+            <p><code>npm i express</code></p>
+
+            <p>Move to VS Code and use the require() function to use Express.js.</p>
+            <p><code>const express= require('express');</code></p>
+
+            <p>Call the express function and store the result in an object called &apos;app&apos;</p>
+            <p>This is a standard set up for an express app and represents the entire application. From here, you can
+                perform various
+                methods on the app object.
+            </p>
+
+            <p>This application is set up and ready to use!</p>
+            <img src="img/install-expresjs.png" alt="Express.js Complete Set Up">
+
+            <h3>Building the REST API</h3>
+
+            <p>REST APIs utilizes the HTTP requests as methods on the app object to complete basic CRUD operations.</p>
+            <p>This includes:</p>
+            <ul>
+                <li>Read: app.get()</li>
+                <li>Create: app.post()</li>
+                <li>Update: app.put()</li>
+                <li>Delete: app.delete()</li>
+            </ul>
+
+            <h4>Read: app.get()</h4>
+            <p>This is a simple get path for the root (&apos;/&apos;).</p>
+            <img src="img/get_path1.png" alt="A Simple get() Path">
+
+            <p>The <code>get()</code> method accepts the URL path as the first parameter and then a callback function as
+                a second parameter. The
+                callback function accepts the HTTP request and response as parameters.
+            </p>
+            <p>When the client requests the root resource (&apos;/&apos;), the callback function will execute and
+                provide
+                the appropriate response.
+            </p>
+            <p>The <code>res.send()</code> method will define what will be sent in the response back to the client.</p>
+
+            <br>
+
+            <p>After setting up the first resource path, you will need to set a port for the app object to listen to for
+                incoming HTTP
+                requests.
+            </p>
+            <p>The <code>app.listen()</code> method will accept the assigned port (3000) to respond to.</p>
+            <p>You can optionally set a function as the second parameter to give a ready message. This is helpful to let
+                the user know
+                the API is working.
+            </p>
+            <p>Example:</p>
+            <img src="img/get_port.png" alt="An Example of Port Listening and Ready Message">
+
+            <br>
+
+            <p>To run the app, use the following command in the terminal: </p>
+            <p><code>node index.js</code></p>
+            <p>The console log from the <code>app.listen()</code> will appear in the terminal when the API is active.
+            </p>
+            <img src="img/node_indexjs.png" alt="A Terminal Showing the Ready Message of an API">
+            <p>Enter <b>localhost:3000</b> in your browser.</p>
+            <p>You will see your response message appear.</p>
+            <img src="img/hello_world_api.png" alt="A Hello World Message">
+
+            <p>Once the first resource path is set up, you can add more resource paths as needed. The resource path
+                below responds with
+                a simple array.
+            </p>
+            <img src="img/get_path2.png" alt="Two Simple get() Paths">
+
+            <br>
+
+            <p>NOTE: The port number used in this example is an arbitrary number. In a real case, you would utilize a
+                port number set
+                as an external environment variable.
+            </p>
+            <img src="img/proper_port_setup.png" alt="An Example of a Proper Port Listener Set Up">
+            <p>This lets the program know to try to find a port number from the environment variables and, if one is not
+                found, use the
+                arbitrary port 3000.
+            </p>
+
+            <br>
+
+            <p>TIP: After each change to the code, Node.js will need to be restarted to see changes in the browser. A
+                helpful
+                module called Nodemon can be installed to automatically restart Node.js with each change.
+            </p>
+
+            <br>
+
+            <h4>Create: app.post()</h4>
+            <p>An array called <code>items</code> was created for this example. Creating, updating, and deleting example
+                opterations will
+                use this array. This code is assuming that the name will come from the body of the post request in a
+                key:value pair.
+            </p>
+
+            <br>
+
+            <p>IMPORTANT: Express.js will not automatically parse new JSON data. You will need to add middleware at the
+                beginning
+                of the code so the JSON data coming with new HTTP requests will be properly parsed.
+            </p>
+            <img src="img/middleware.png" alt="An Example of Middleware for JSON Data Parsing">
+
+            <br>
+
+            <p>The <code>post()</code> resource path is set up with the same URL path and response/request callback
+                layout.</p>
+            <p>However, in the call back function code block, you will need to prepare for new data from the client. You
+                should create
+                a new item and create the format for the incoming data. In this case, we will assign an id and retrieve
+                the name from
+                the client.
+            </p>
+            <img src="img/post_setup.png" alt="A post() Resouce Path Set Up">
+
+            <p>To update our array with the new item, you will need to push the new item to the array.</p>
+            <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+            <img src="img/post_completed.png" alt="A Completed post() Resource Path">
+
+            <br>
+
+            <h4>Update: app.put()</h4>
+            <p>Before you can update a particular item, you first need to look for it in our array. You can find the
+                specific item by adding
+                <code>:id</code> in the route path parameter.
+            </p>
+            <p>It is best practice to validate if the ID exists before the code block fully executes. If the ID
+                doesn&apos;t exist, you can stop the
+                function using a <code>return</code> and provide a 404 error back to the client.
+            </p>
+            <img src="img/put_find_item.png" alt="A put() Resource Path Set Up">
+
+            <p>In this example, we are updating the item&apos;s name from the data entered into the HTTP request body.
+            </p>
+            <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+            <img src="img/put_completed.png" alt="A Completed put() Resource Path">
+
+            <br>
+
+            <h4>Delete: app.delete()</h4>
+            <p>The <code>delete()</code> method begins the same as the <code>put()</code> method: by finding the
+                specific item by adding <code>:id</code> in the route
+                path parameter and including instructions for a 404 error if the ID doesn&apos;t exist.
+            </p>
+            <img src="img/delete_find_item.png" alt="A delete() Resource Path Set Up">
+
+            <p>To delete the item, you should first find the index of the item from the array using the built in
+                <code>indexOf()</code> method and assign value to a variable.
+                Next, you can use the <code>splice()</code> method to remove this item by giving it the index value of
+                the item and removing 1 object.
+            </p>
+            <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+            <img src="img/delete_completed.png" alt="A Completed delete() Resource Path">
+        </div>
+
+        <div class="section" id="bestPractices">
+            <h2>Best practices and security considerations</h2>
+            <p>A secure Node.js application is important in protecting user data and application function.</p>
+            <p>Node.js gets a lot of power in NPM and it's modules, however there can be security vulnerabilities found
+                in their files. </p>
+            <p>Here are some best practices and securiy considerations for your Node.js project</p>
+
+            <h3>Keep your NPM libraries up to date</h3>
+            <p>NPM libraries can introduce security risks into your application. As vulnerabilities are discovered,
+                maintainers will push out an updated version of the package.</p>
+            <p>You should update to the latest version of each package to make sure you are as secure as you can be.</p>
+
+            <h3>Never run Node.js with root privileges</h3>
+            <p>Follow the <b>Principle of Least Privilege</b> and give any user accounts or processes only the
+                minimal/necessary amount of access needed to complete the task.</p>
+            <p>The best practice here is to create a dedicated user for running Node.js. This user should have only the
+                permissions required to launch the app. This way, attackers
+                who succeed in compromising the backend will be restricted to that user&apos;s privileges, limiting the
+                potential damage they can cause.
+            </p>
+
+            <h3>Limiting exposure of information to an unauthorized users</h3>
+            <p>During a package publication, all of the files and folders in your current directory will be pushed to
+                the NPM registry. You are able to define a blocklist using .npmignor
+                and .gitignor that will let you better control what you publish. If there is an exposure you are able to
+                unpublish the package.
+            </p>
+
+            <h3>Denial of service of HTTP server</h3>
+            <p>This is an issue where the application becomes unavailable for its purpose due to how it processes
+                incoming HTTP requests. The WebServer needs to handle socket errors correctly,
+                such as having an error handler, or it will be vulnerable. You can also configure the server timeouts,
+                so that idle connections or slow requests can be dropped.
+            </p>
+
+        </div>
+
+        <div class="section" id="resources">
+            <h2>Resources</h2>
+                <h4>Node.js Definition, Purpose and Importance</h4>
+                    <ul>
+                        <li><a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs">Introduction to Node JS</a></li>
+                        <li><a href="https://www.toptal.com/javascript/why-the-hell-would-i-use-node-js">Why the hell would I use Node JS?</a></li>
+                        <li><a href="https://nodejs.org/en">Node.js</a></li>
+                        <li><a href="https://medium.com/@codejuggler/why-node-js-is-single-threaded-and-how-it-scales-eb32f3fc4cbc#:~:text=In%20conclusion%2C%20Node.,use%20of%20asynchronous%20programming%20techniques">Why Node.js is Single-Threaded and How It Scales</a></li>
+                        <li><a href="https://codedamn.com/news/nodejs/features-of-node-js">Top 8 Key Features Of Node.js you should know!</a></li>
+                    </ul>
+                <h4>How does Node.js integrate into the MERN Stack?</h4>
+                    <ul>
+                        <li><a href="https://blog.nextideatech.com/how-to-get-started-with-the-mern-stack-a-comprehensive-guide/">MERN Stack: A Comprehensive Guide</a></li>
+                        <li><a href="https://blog.logrocket.com/creating-configuration-files-node-js-using-node-config/#:~:text=Node%2Dconfig%20allows%20you%20to,as%20development%2C%20staging%2C%20etc">Creating configuration files in Node.js using node-config</a></li>
+                    </ul>
+                <h4>Common Functionality</h4>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/nodejs/nodejs_intro.asp">Node.js Introduction</a></li>
+                        <li><a href="https://akshay9.medium.com/10-essential-built-in-node-js-functions-every-developer-should-know-9319f9d432d2">10 Essential Built-in Node.js Functions Every Developer Should Know</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/node-js-modules/">Node.js Modules</a></li>
+                        <li><a href="https://www.w3schools.com/nodejs/ref_modules.asp">Node.js Built-in Modules</a></li>
+                        <li><a href="https://www.w3schools.com/nodejs/nodejs_npm.asp">Node.js NPM</a></li>
+                        <li><a href="https://docs.npmjs.com/about-npm">About NPM</a></li>
+                        <li><a href="https://www.w3schools.com/nodejs/nodejs_mongodb.asp">Node.js MongoDB</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/nodejs-callbacks/#:~:text=Aditya%20Gupta-,Node.,help%20us%20make%20asynchronous%20calls">How Callbacks Work in Node.js</a></li>
+                    </ul>
+                <h4>Setting Up a Node,js Environment</h4>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment">Setting up a Node development environment</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=wM3TEvQn2hw">How to Set Up a Node.js Project</a></li>
+                    </ul>
+                <h4>Building a REST API with Express.js</h4>
+                    <ul>
+                        <li><a href="https://blog.postman.com/how-to-create-a-rest-api-with-node-js-and-express/">How to create a REST API with Node.js and Express</a></li>
+                        <li><a href="https://www.robinwieruch.de/node-express-server-rest-api/">How to create a REST API with Express.js in Node.js</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pKd0Rpw7O48">How to build a REST API with Node js & Express</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=-MTSQjw5DrM">RESTful APIs in 100 Seconds // Build an API from Scratch with Node.js Express</a></li>
+                    </ul>
+                <h4>Best Practices and Security Considerations</h4>
+                    <ul>
+                        <li><a href="https://semaphoreci.com/blog/securing-nodejs">Best Practices for Securing Node.js Applications in Production</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">Principle of least privilege</a></li>
+                        <li><a href="https://nodejs.org/en/learn/getting-started/security-best-practices">Security Best Practices</a></li>
+                    </ul>
+        </div>
+
+</body>
+
+</html>
