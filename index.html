@@ -363,7 +363,7 @@
                 resource/endpoint data by making a HTTP request and using the required URL format and appropriate HTTP
                 method:
             </p>
-            <p>http://domain-name.com/HTTP-method/resource-name</p>
+            <p><b>Required Format:</b> http://domain-name.com/HTTP-method/resource-name</p>
 
 
             <h3>A Review on HTTP Methods</h3>
@@ -375,18 +375,19 @@
             </p>
             <p>Server Status Codes</p>
             <ul>
-                <li>2** - GOOD</li>
+                <li>2** - Good</li>
                 <li>4** - Something is wrong with the request</li>
                 <li>5** - Something is wrong with the server/server response</li>
             </ul>
 
-
+            <br>
+            
             <h3>What is Express.js?</h3>
             <p>When creating an api with multiple HTTP requests/responses, the code can get pretty complicated. A
                 framework,
                 like Express.js, helps to give the application a structure and easily add more paths.
             </p>
-
+            
 
             <h4>Installing Express.js</h4>
             <p>Express.js is a packae found on npm and can be installed in your project through the terminal.</p>
@@ -408,18 +409,20 @@
             <p>This application is set up and ready to use!</p>
             <img src="img/install-expresjs.png" alt="Express.js Complete Set Up">
 
+            <br>
+            
             <h3>Building the REST API</h3>
 
             <p>REST APIs utilizes the HTTP requests as methods on the app object to complete basic CRUD operations.</p>
             <p>This includes:</p>
             <ul>
-                <li>Read: app.get()</li>
-                <li>Create: app.post()</li>
-                <li>Update: app.put()</li>
-                <li>Delete: app.delete()</li>
+                <li>Read: <code>app.get()</code></li>
+                <li>Create: <code>app.post()</code></li>
+                <li>Update: <code>app.put()</code></li>
+                <li>Delete: <code>app.delete()</code></li>
             </ul>
 
-            <h4>Read: app.get()</h4>
+            <h4>Read: <code>app.get()</code></h4>
             <p>This is a simple get path for the root (&apos;/&apos;).</p>
             <img src="img/get_path1.png" alt="A Simple get() Path">
 
@@ -466,7 +469,7 @@
 
             <br>
 
-            <p>NOTE: The port number used in this example is an arbitrary number. In a real case, you would utilize a
+            <p><b>NOTE:</b> The port number used in this example is an arbitrary number. In a real case, you would utilize a
                 port number set
                 as an external environment variable.
             </p>
@@ -478,14 +481,14 @@
 
             <br>
 
-            <p>TIP: After each change to the code, Node.js will need to be restarted to see changes in the browser. A
+            <p><b>TIP:</b> After each change to the code, Node.js will need to be restarted to see changes in the browser. A
                 helpful
                 module called Nodemon can be installed to automatically restart Node.js with each change.
             </p>
 
             <br>
 
-            <h4>Create: app.post()</h4>
+            <h4>Create: <code>app.post()</code></h4>
             <p>An array called <code>items</code> was created for this example. Creating, updating, and deleting example
                 opterations will
                 use this array. This code is assuming that the name will come from the body of the post request in a
@@ -498,13 +501,14 @@
                 beginning
                 of the code so the JSON data coming with new HTTP requests will be properly parsed.
             </p>
+            <p>Middleware: <code>app.use(express.json());</code></p>
             <img src="img/middleware.png" alt="An Example of Middleware for JSON Data Parsing">
 
             <br>
 
             <p>The <code>post()</code> resource path is set up with the same URL path and response/request callback
                 layout.</p>
-            <p>However, in the call back function code block, you will need to prepare for new data from the client. You
+            <p>However, in the call back function code block, you will need to prepare a templatefor new data from the client. You
                 should create
                 a new item and create the format for the incoming data. In this case, we will assign an id and retrieve
                 the name from
@@ -518,7 +522,7 @@
 
             <br>
 
-            <h4>Update: app.put()</h4>
+            <h4>Update: <code>app.put()</code></h4>
             <p>Before you can update a particular item, you first need to look for it in our array. You can find the
                 specific item by adding
                 <code>:id</code> in the route path parameter.
@@ -536,7 +540,7 @@
 
             <br>
 
-            <h4>Delete: app.delete()</h4>
+            <h4>Delete: <code>app.delete()</code></h4>
             <p>The <code>delete()</code> method begins the same as the <code>put()</code> method: by finding the
                 specific item by adding <code>:id</code> in the route
                 path parameter and including instructions for a 404 error if the ID doesn&apos;t exist.
@@ -555,9 +559,9 @@
         <div class="section" id="bestPractices">
             <h2>Best practices and security considerations</h2>
             <p>A secure Node.js application is important in protecting user data and application function.</p>
-            <p>Node.js gets a lot of power in NPM and it's modules, however there can be security vulnerabilities found
+            <p>Node.js gets a lot of power from NPM and it's packages, however there can be security vulnerabilities found
                 in their files. </p>
-            <p>Here are some best practices and securiy considerations for your Node.js project</p>
+            <p>Here are some best practices and securiy considerations for your Node.js project.</p>
 
             <h3>Keep your NPM libraries up to date</h3>
             <p>NPM libraries can introduce security risks into your application. As vulnerabilities are discovered,
@@ -581,8 +585,8 @@
             </p>
 
             <h3>Denial of service of HTTP server</h3>
-            <p>This is an issue where the application becomes unavailable for its purpose due to how it processes
-                incoming HTTP requests. The WebServer needs to handle socket errors correctly,
+            <p>This is an issue where the application becomes unavailable for its purpose because of how it processes
+                incoming HTTP requests. The server needs to be prepared to handle socket errors correctly,
                 such as having an error handler, or it will be vulnerable. You can also configure the server timeouts,
                 so that idle connections or slow requests can be dropped.
             </p>
