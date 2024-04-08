@@ -108,25 +108,59 @@
         </div>
 
         <div class="section" id="mern">
-        <h2>How does it integrate into the MERN Stack?</h2>
-        <h3>What are the steps to integrate it?</h3>
-        <h3>What are its dependencies?</h3>
-        <h3>Are there any considerations for this configuration? What are the most common and how are they done?</h3>
+            <h2>How does it integrate into the MERN Stack?</h2>
+            <h3>What are the steps to integrate it?</h3>
+            <h3>What are its dependencies?</h3>
+            <h3>Are there any considerations for this configuration? What are the most common and how are they done?
+            </h3>
         </div>
 
         <div class="section" id="commonFunctionality">
-        <h2>Common Functionality</h2>
-        <h4>Node Modules</h4>
-        <h4>NPM</h4>
-        <h4>MongoDB</h4>
+            <h2>Common Functionality</h2>
+            <h4>Node Modules</h4>
+            <h4>NPM</h4>
+            <h4>MongoDB</h4>
         </div>
 
         <div class="section" id="async">
-        <h2>Asynchronous programming in Node.js</h2>
+            <h2>Asynchronous programming in Node.js</h2>
+            <p>Programming asynchronously means that you don’t have to wait for a task to finish before moving on to a
+                different task. Intensive tasks will run in the background without blocking other parts of the code.</p>
+            <p><b>Callbacks</b> help us make asynchronous calls.</p>
+            <p><b>Callbacks</b> are a function which is passed as an argument in another function.</p>
+            <p>Callback functions are called when the function that contains the callback as an argument completes its execution, and allows the code in the callback to run in the meantime.</p>
+            <p>For example, we can define a callback to print the error and result after the function execution</p>
+            <ul><p><code>function function_name(argument, <b>function (error, result){<br>&emsp;if(error){<br>&emsp;&emsp;console.log(error)<br>&emsp;} else {<br>&emsp;&emsp;console.log(result)<br>&emsp;}<br>}</b>) // bold = callback function</code></p></ul>
+            <p>or with an arrow function:</p>
+            <ul><p><code>function function_name(argument, (callback_argument) => {<br> 
+                &emsp;// callback body<br> 
+            })
+            </code></p></ul>
+            <p>For a function that reads text froma file and displays the data in the console log</p>
+            <p>An example without callbacks:</p>
+            <ul>
+            <p><code>const fs = require('fs');<br>
+
+                const data = fs.readFileSync('hello.txt', 'utf-8');<br>console.log(data);</code></p>
+            <p>For any code after the <code>readFileSync</code> method, would need to wait for it to finish processing, blocking any other functions.</p></ul>
+            <p>An example with callbacks:</p>
+            <ul>
+            <p><code>const fs = require('fs');<br> 
+
+                const data = fs.readFile('hello.txt', 'utf-8', function(err, result){<br> 
+                    &emsp;if(err){ <br>
+                        &emsp;&emsp;console.log(err) <br>
+                        &emsp;} else { <br>
+                            &emsp;&emsp;console.log(result) <br>
+                            &emsp;} <br>
+                });</code></p>
+            <p>This example includes a callback function.</p>
+            <p>When the <code>readFile</code> method is done the callback is triggered and prints the results.</p>
+            </ul>
         </div>
 
         <div class="section" id="setup">
-        <h2>Setting Up a Node.js environment</h2>
+            <h2>Setting Up a Node.js environment</h2>
         </div>
 
         <div class="section" id="RESTAPI">
@@ -369,7 +403,7 @@
         </div>
 
         <div class="section" id="resources">
-        <h2>Resources</h2>
+            <h2>Resources</h2>
         </div>
 
 </body>
