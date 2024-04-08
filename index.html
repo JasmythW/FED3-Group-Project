@@ -268,7 +268,33 @@
                 <img src="img/delete_completed.png" alt="A Completed delete() Resource Path">
         </div>
     
-        <h2>Best practices and security considerations</h2>
+        <div id="bestPractices">
+            <h2>Best practices and security considerations</h2>
+                <p>A secure Node.js application is important in protecting user data and application function.</p>
+                <p>Node.js gets a lot of power in NPM and it's modules, however there can be security vulnerabilities found in their files. </p>
+                <p>Here are some best practices and securiy considerations for your Node.js project</p>
+
+                <h3>Keep your NPM libraries up to date</h3>
+                    <p>NPM libraries can introduce security risks into your application. As vulnerabilities are discovered, maintainers will push out an updated version of the package.</p>
+                    <p>You should update to the latest version of each package to make sure you are as secure as you can be.</p>
+
+                <h3>Never run Node.js with root privileges</h3>
+                    <p>Follow the <b>Principle of Least Privilege</b> and give any user accounts or processes only the minimal/necessary amount of access needed to complete the task.</p>
+                    <p>The best practice here is to create a dedicated user for running Node.js. This user should have only the permissions required to launch the app. This way, attackers
+                        who succeed in compromising the backend will be restricted to that user&apos;s privileges, limiting the potential damage they can cause.
+                    </p>
+
+                <h3>Limiting exposure of information to an unauthorized users</h3>
+                    <p>During a package publication, all of the files and folders in your current directory will be pushed to the NPM registry. You are able to define a blocklist using .npmignor
+                        and .gitignor that will let you better control what you publish. If there is an exposure you are able to unpublish the package.
+                    </p>
+
+                <h3>Denial of service of HTTP server</h3>
+                    <p>This is an issue where the application becomes unavailable for its purpose due to how it processes incoming HTTP requests. The WebServer needs to handle socket errors correctly,
+                        such as having an error handler, or it will be vulnerable. You can also configure the server timeouts, so that idle connections or slow requests can be dropped.
+                    </p>
+            
+        </div>
     
         <h2>Resources</h2>
     
