@@ -117,90 +117,101 @@
 
         <div class="section" id="commonFunctionality">
             <h2>Common Functionality</h2>
-                <p>Node.js creates a runtime environment/ local host for your program. Additionally, through the help of modules, common tasks like creating
-                    HTTP servers and requests, accessing and manipulating the file system, and handling events are made simple.
-                </p>
+            <p>Node.js creates a runtime environment/ local host for your program. Additionally, through the help of
+                modules, common tasks like creating
+                HTTP servers and requests, accessing and manipulating the file system, and handling events are made
+                simple.</p>
             <h3>Node Modules</h3>
-                <p><b>Node Modules</b> are blocks of code that include functions to use within your code. There are multiple source options for modules:</p>
-                <ul>
-                    <li><b>Included with Node.js-</b> core modules included with Node.js download.</li>
-                    <li><b>NPM-</b> modules can be downloaded from NPM</li>
-                    <li><b>Create Your Own-</b> create your own module by creating a file for it, building the functions, then using the <code>require()</code>
-                         function to use it in a different file.</li>
-                </ul>
-                <p>Modules are very important because they are reusable and they help break down complex pieces of code into manageable chunks.
-                </p>
+            <p><b>Node Modules</b> are blocks of code that include functions to use within your code. There are multiple
+                source options for modules:</p>
+            <ul>
+                <li><b>Included with Node.js-</b> core modules included with Node.js download.</li>
+                <li><b>NPM-</b> modules can be downloaded from NPM</li>
+                <li><b>Create Your Own-</b> create your own module by creating a file for it, building the functions,
+                    then using the <code>require()</code>
+                    function to use it in a different file.</li>
+            </ul>
+            <p>Modules are very important because they are reusable and they help break down complex pieces of code into
+                manageable chunks.
+            </p>
 
-                <h4>Core Modules</h4>
-                <p>Nodes.js&apos;s Core Modules are modules included in the Node.js installation. These modules can be loaded into your program by using the <code>required()</code> function.</p>
-                <p><code>const module = require('module_name);</code></p>
+            <h4>Core Modules</h4>
+            <p>Nodes.js&apos;s Core Modules are modules included in the Node.js installation. These modules can be
+                loaded into your program by using the <code>required()</code> function.</p>
+            <p><code>const module = require('module_name);</code></p>
 
-                <p>Some of the most commonly used core modules: </p>
-                <table>
-                    <tr>
-                        <th>Core Modules</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
-                        <td>http</td>
-                        <td>Creates an HTTP server in Node.js</td>
-                    </tr>
-                    <tr>
-                        <td>events</td>
-                        <td>Handling events</td>
-                    </tr>
-                    <tr>
-                        <td>assert</td>
-                        <td>Provides a set of assertion tests</td>
-                    </tr>
-                    <tr>
-                        <td>fs</td>
-                        <td>Used to handle file system</td>
-                    </tr>
-                    <tr>
-                        <td>path</td>
-                        <td>Includes methods to deal with file paths</td>
-                    </tr>
-                    <tr>
-                        <td>os</td>
-                        <td>Provides information about the operating system</td>
-                    </tr>
-                    <tr>
-                        <td>querystring</td>
-                        <td>Utility used for parsing and formatting URL query strings</td>
-                    </tr>
-                    <tr>
-                        <td>url</td>
-                        <td>Module provides utilities for URL resolution and parsing</td>
-                    </tr>
-                    <tr>
-                        <td>Find full list of core modules:</td>
-                        <td><a href="https://www.w3schools.com/nodejs/ref_modules.asp">Here</a></td>
-                    </tr>
-                </table>
+            <p>Some of the most commonly used core modules: </p>
+            <table>
+                <tr>
+                    <th>Core Modules</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>http</td>
+                    <td>Creates an HTTP server in Node.js</td>
+                </tr>
+                <tr>
+                    <td>events</td>
+                    <td>Handling events</td>
+                </tr>
+                <tr>
+                    <td>assert</td>
+                    <td>Provides a set of assertion tests</td>
+                </tr>
+                <tr>
+                    <td>fs</td>
+                    <td>Used to handle file system</td>
+                </tr>
+                <tr>
+                    <td>path</td>
+                    <td>Includes methods to deal with file paths</td>
+                </tr>
+                <tr>
+                    <td>os</td>
+                    <td>Provides information about the operating system</td>
+                </tr>
+                <tr>
+                    <td>querystring</td>
+                    <td>Utility used for parsing and formatting URL query strings</td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td>Module provides utilities for URL resolution and parsing</td>
+                </tr>
+                <tr>
+                    <td class="noBorder">Find full list of core modules:</td>
+                    <td class="noBorder"><a href="https://www.w3schools.com/nodejs/ref_modules.asp">Here</a></td>
+                </tr>
+            </table>
 
-                <h4>Creating an HTML Server:</h4>
-                    <p>A very common function of using Node.js is creating an HTTP server using the HTTP module. Here is what a simple HTTP server would
-                         look like using this module:
-                    </p>
-                    <img src="img/http_server_ex.png" alt="An HTTP Server Made Using HTTP Module">
+            <h4>Creating an HTML Server:</h4>
+            <p>A very common function of using Node.js is creating an HTTP server using the HTTP module. Here is what a
+                simple HTTP server would
+                look like using this module:
+            </p>
+            <img src="img/http_server_ex.png" alt="An HTTP Server Made Using HTTP Module">
 
             <h3>NPM</h3>
-                <p>NPM (aka Node Package Manager) is the largest software registry which manages packages (or modules). It hosts thousands of packages
-                     which can be downloaded and applied to your projects.
-                </p>
-                <p>NPM is installed with the Node.js download. When you are ready to use modules or prepare the package.json file for your project,
-                     you will need to use the following command in the terminal:
-                </p>
-                <p><code>npm init</code></p>
+            <p>NPM (aka Node Package Manager) is the largest software registry which manages packages (or modules). It
+                hosts thousands of packages
+                which can be downloaded and applied to your projects.
+            </p>
+            <p>NPM is installed with the Node.js download. When you are ready to use modules or prepare the package.json
+                file for your project,
+                you will need to use the following command in the terminal:
+            </p>
+            <p><code>npm init</code></p>
 
-                <p>You can browse NPM&apos;s website (<a href="https://www.npmjs.com/">https://www.npmjs.com/</a>) to find different packages. However,
-                     to use the packages in your code, you will need to use a unique install command through the command line interface/terminal.
-                </p>
-                <p>For example: <code>node i express</code> installs the Express.js package in your project.</p>
+            <p>You can browse NPM&apos;s website (<a href="https://www.npmjs.com/">https://www.npmjs.com/</a>) to find
+                different packages. However,
+                to use the packages in your code, you will need to use a unique install command through the command line
+                interface/terminal.
+            </p>
+            <p>For example: <code>node i express</code> installs the Express.js package in your project.</p>
 
-                <p>Finally, to use a NPM package in your project, you will need to load the package into the program with the required function:</p>
-                <p><code>const pn = require('package-name');</code></p>
+            <p>Finally, to use a NPM package in your project, you will need to load the package into the program with
+                the required function:</p>
+            <p><code>const pn = require('package-name');</code></p>
 
         </div>
 
@@ -210,28 +221,35 @@
                 different task. Intensive tasks will run in the background without blocking other parts of the code.</p>
             <p><b>Callbacks</b> help us make asynchronous calls.</p>
             <p><b>Callbacks</b> are a function which is passed as an argument in another function.</p>
-            <p>Callback functions are called when the function that contains the callback as an argument completes its execution, and allows the code in the callback to run in the meantime.</p>
+            <p>Callback functions are called when the function that contains the callback as an argument completes its
+                execution, and allows the code in the callback to run in the meantime.</p>
             <p>For example, we can define a callback to print the error and result after the function execution</p>
-            <ul><p><code>function function_name(argument, <b>function (error, result){ <br>
+            <ul>
+                <p><code>function function_name(argument, <b>function (error, result){ <br>
                 &emsp;if(error){ <br>
                     &emsp;&emsp;console.log(error) <br>
                     &emsp;} else {<br>&emsp;&emsp;console.log(result) <br>
                         &emsp;} <br>
-                    }</b>) // bold = callback function</code></p></ul>
+                    }</b>) // bold = callback function</code></p>
+            </ul>
             <p>or with an arrow function:</p>
-            <ul><p><code>function function_name(argument, (callback_argument) => { <br> 
+            <ul>
+                <p><code>function function_name(argument, (callback_argument) => { <br> 
                 &emsp;// callback body <br> 
             })
-            </code></p></ul>
+            </code></p>
+            </ul>
             <p>For a function that reads text froma file and displays the data in the console log</p>
             <p>An example without callbacks:</p>
             <ul>
-            <p><code>const fs = require('fs');<br>
+                <p><code>const fs = require('fs');<br>
                 const data = fs.readFileSync('hello.txt', 'utf-8');<br>console.log(data);</code></p>
-            <p>For any code after the <code>readFileSync</code> method, would need to wait for it to finish processing, blocking any other functions.</p></ul>
+                <p>For any code after the <code>readFileSync</code> method, would need to wait for it to finish
+                    processing, blocking any other functions.</p>
+            </ul>
             <p>An example with callbacks:</p>
             <ul>
-            <p><code>const fs = require('fs');<br>
+                <p><code>const fs = require('fs');<br>
                 const data = fs.readFile('hello.txt', 'utf-8', function(err, result){ <br> 
                     &emsp;if(err){ <br>
                         &emsp;&emsp;console.log(err) <br>
@@ -239,8 +257,8 @@
                             &emsp;&emsp;console.log(result) <br>
                             &emsp;} <br>
                 });</code></p>
-            <p>This example includes a callback function.</p>
-            <p>When the <code>readFile</code> method is done the callback is triggered and prints the results.</p>
+                <p>This example includes a callback function.</p>
+                <p>When the <code>readFile</code> method is done the callback is triggered and prints the results.</p>
             </ul>
         </div>
 
@@ -248,49 +266,55 @@
             <h2>Setting Up a Node.js environment</h2>
 
             <h3>Step 1: Download and install Node.js</h3>
-                <p>You can download Node.js from <a href="https://nodejs.org" >https//nodejs.org</a>. NPM will also be installed along side Node.js</p>
+            <p>You can download Node.js from <a href="https://nodejs.org">https//nodejs.org</a>. NPM will also be
+                installed along side Node.js</p>
 
             <h3>Step 2: Open Terminal and Create a Directory</h3>
-                <p>In the terminal, use the following command to make a new file directory:</p>
-                <code>mkdir [directory name]</code>
+            <p>In the terminal, use the following command to make a new file directory:</p>
+            <code>mkdir [directory name]</code>
 
-                <p>Then use this command to move into (or change to) the new directory:</p>
-                <code>cd [directory name]</code>
+            <p>Then use this command to move into (or change to) the new directory:</p>
+            <code>cd [directory name]</code>
 
-                <img src="img/node_setup1.png" alt="In a Terminal Making a New Directory and Changing to It">
+            <img src="img/node_setup1.png" alt="In a Terminal Making a New Directory and Changing to It">
 
             <h3>Step 3: Set Up a package.json File</h3>
-                <p>This package.json file will hold important information including dependencies for the project, author information, etc. In the terminal,
-                     use the following command:
-                </p>
-                <code>npm init -y</code>
-                <p><code>-y</code> accepts the default settings for setting up the file. You can edit this file at any time so you can use the <code>-y</code>
-                     to have a quicker set up.
-                </p>
+            <p>This package.json file will hold important information including dependencies for the project, author
+                information, etc. In the terminal,
+                use the following command:
+            </p>
+            <code>npm init -y</code>
+            <p><code>-y</code> accepts the default settings for setting up the file. You can edit this file at any time
+                so you can use the <code>-y</code>
+                to have a quicker set up.
+            </p>
 
-                <img src="img/node_setup2.png" alt="In a Terminal Setting Up a Package.JSON File">
+            <img src="img/node_setup2.png" alt="In a Terminal Setting Up a Package.JSON File">
 
             <h3>Step 4: Begin Coding in VS Code</h3>
-                <p>Begin writing code in the VS Code code editor. Open the new folder in VS Code or in the terminal, type in command <code>code .</code>. This
-                     command will open VS Code and the . refers to the current file in the directory.
-                </p>
+            <p>Begin writing code in the VS Code code editor. Open the new folder in VS Code or in the terminal, type in
+                command <code>code .</code>. This
+                command will open VS Code and the . refers to the current file in the directory.
+            </p>
 
-                <p>You will see the previously set up package.json file in the file directory.</p>
-                <img src="img/node_setup3.png" alt="A Properly Set Up Node Project Directory and Package.JSON File">
+            <p>You will see the previously set up package.json file in the file directory.</p>
+            <img src="img/node_setup3.png" alt="A Properly Set Up Node Project Directory and Package.JSON File">
 
             <h3>Step 5: Create a index.js File</h3>
-                <p>The index.js file is the default main file for this project. You can create this file in the directory in VS Code by selecting the “New File”
-                     button.
-                </p>
+            <p>The index.js file is the default main file for this project. You can create this file in the directory in
+                VS Code by selecting the “New File”
+                button.
+            </p>
 
-                <p><b>Important:</b> The package.json file will expect a “main” file which by default is named “index.js”. If you decide to name your main file
-                     something different, make sure to change the name in the package.json file.
-                </p>
+            <p><b>Important:</b> The package.json file will expect a “main” file which by default is named “index.js”.
+                If you decide to name your main file
+                something different, make sure to change the name in the package.json file.
+            </p>
 
-                <img src="img/node_setup4.png" alt="A New Index.js File in a Project Directory">
+            <img src="img/node_setup4.png" alt="A New Index.js File in a Project Directory">
 
             <h3>Step 6: Your Node.js Project is Set Up!</h3>
-                <p>You can now start coding or working with packages.</p>
+            <p>You can now start coding or working with packages.</p>
 
         </div>
 
