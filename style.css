@@ -8,6 +8,9 @@ body{
 }
 
 code {
+    background-color: rgb(234, 234, 234);
+    padding: 4px;
+    border-radius: 4px;
     font-size: 16px;
 }
 

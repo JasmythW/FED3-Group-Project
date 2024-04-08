@@ -130,24 +130,27 @@
             <p><b>Callbacks</b> are a function which is passed as an argument in another function.</p>
             <p>Callback functions are called when the function that contains the callback as an argument completes its execution, and allows the code in the callback to run in the meantime.</p>
             <p>For example, we can define a callback to print the error and result after the function execution</p>
-            <ul><p><code>function function_name(argument, <b>function (error, result){<br>&emsp;if(error){<br>&emsp;&emsp;console.log(error)<br>&emsp;} else {<br>&emsp;&emsp;console.log(result)<br>&emsp;}<br>}</b>) // bold = callback function</code></p></ul>
+            <ul><p><code>function function_name(argument, <b>function (error, result){ <br>
+                &emsp;if(error){ <br>
+                    &emsp;&emsp;console.log(error) <br>
+                    &emsp;} else {<br>&emsp;&emsp;console.log(result) <br>
+                        &emsp;} <br>
+                    }</b>) // bold = callback function</code></p></ul>
             <p>or with an arrow function:</p>
-            <ul><p><code>function function_name(argument, (callback_argument) => {<br> 
-                &emsp;// callback body<br> 
+            <ul><p><code>function function_name(argument, (callback_argument) => { <br> 
+                &emsp;// callback body <br> 
             })
             </code></p></ul>
             <p>For a function that reads text froma file and displays the data in the console log</p>
             <p>An example without callbacks:</p>
             <ul>
             <p><code>const fs = require('fs');<br>
-
                 const data = fs.readFileSync('hello.txt', 'utf-8');<br>console.log(data);</code></p>
             <p>For any code after the <code>readFileSync</code> method, would need to wait for it to finish processing, blocking any other functions.</p></ul>
             <p>An example with callbacks:</p>
             <ul>
-            <p><code>const fs = require('fs');<br> 
-
-                const data = fs.readFile('hello.txt', 'utf-8', function(err, result){<br> 
+            <p><code>const fs = require('fs');<br>
+                const data = fs.readFile('hello.txt', 'utf-8', function(err, result){ <br> 
                     &emsp;if(err){ <br>
                         &emsp;&emsp;console.log(err) <br>
                         &emsp;} else { <br>
