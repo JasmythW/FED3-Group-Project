@@ -27,6 +27,11 @@ img {
     object-fit: scale-down;
     width: 65%;
 }
+a {
+    background-color: inherit;
+    color: rgb(123, 171, 96);
+    text-decoration: none;
+}
 
 @media only screen and (min-width: 992px) {
     img {
@@ -40,6 +45,10 @@ h1 {
     text-align: center;
     font-size: 48px;
 }
+li{
+    list-style-type: circle;
+}
+
 
 .navbar {
     background-color: white;
