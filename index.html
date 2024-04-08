@@ -239,9 +239,33 @@
                 <img src="img/post_completed.png" alt="A Completed post() Resource Path">
                 
             <br>
-            <!-- NEED TO DO -->
+
             <h4>Update: app.put()</h4>
+                <p>Before you can update a particular item, you first need to look for it in our array. You can find the specific item by adding
+                     <code>:id</code> in the route path parameter.
+                </p>
+                <p>It is best practice to validate if the ID exists before the code block fully executes. If the ID doesn&apos;t exist, you can stop the
+                     function using a <code>return</code> and provide a 404 error back to the client. 
+                </p>
+                <img src="img/put_find_item.png" alt="A put() Resource Path Set Up">
+
+                <p>In this example, we are updating the item&apos;s name from the data entered into the HTTP request body.</p>
+                <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+                <img src="img/put_completed.png" alt="A Completed put() Resource Path">
+
+            <br>
+
             <h4>Delete: app.delete()</h4>
+                <p>The <code>delete()</code> method begins the same as the <code>put()</code> method: by finding the specific item by adding <code>:id</code> in the route
+                     path parameter and including instructions for a 404 error if the ID doesn&apos;t exist.
+                </p>
+                <img src="img/delete_find_item.png" alt="A delete() Resource Path Set Up">
+
+                <p>To delete the item, you should first find the index of the item from the array using the built in <code>indexOf()</code> method and assign value to a variable.
+                     Next, you can use the <code>splice()</code> method to remove this item by giving it the index value of the item and removing 1 object.
+                </p>
+                <p>Finally, as confirmation, it is a good idea to send the new item as a response back to the client.</p>
+                <img src="img/delete_completed.png" alt="A Completed delete() Resource Path">
         </div>
     
         <h2>Best practices and security considerations</h2>
