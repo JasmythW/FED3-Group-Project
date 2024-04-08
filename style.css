@@ -61,9 +61,19 @@ h1 {
     padding: 0 16px;
     margin-bottom: 24px;
 }
+
 .section h2 {
     background-color: rgb(123, 171, 96);
     padding: 16px;
     margin: 0;
 }
 
+.section ul {
+    list-style-type: none;
+}
+
+.section img { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
